@@ -6,4 +6,6 @@ This project is meant to be run by some sort of scheduled job performing a post 
 
 The action will perform a POST to the given target IFTTT Maker url with a json payload of:
 
-` { "value1": [imageUrl] }
+```
+{ "value1": [imageUrl] }
+```
