@@ -1,0 +1,56 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <meta name="description" content="Posts a url to an IFTTT maker channel that represents a random image taken from a set of smugmug albums">
+    <meta name="author" content="Timothy Sandholm">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <title>Smugmug/IFTTT Image of the Day Generator</title>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+
+
+            <h1 class="section-heading">Smugmug/IFTTT Image of the Day Generator</h1>
+            <form action="@Url.Action("Publish")" method="post">
+                <div class="row">
+                    <div class="six columns">
+                        <label for="consumerKey">Smugmug Consumer Key</label>
+                        <input class="u-full-width" type="text" id="consumerKey" name="consumerKey" />
+                    </div>
+                    <div class="six columns">
+                        <label for="targetMakerUrl">IFTTT Maker Url</label>
+                        <input class="u-full-width" type="url" id="targetMakerUrl" name="targetMakerUrl" />
+                    </div>
+                </div>
+                <label for="rootNodes">Root Smugmug Node</label>
+                <input type="text" class="u-full-width" placeholder="e.g. &quot;wfnZP&quot;" id="rootNodes" name="rootNodes" />
+                <input class="button-primary" value="Submit" type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
